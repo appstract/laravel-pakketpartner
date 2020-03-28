@@ -1,0 +1,51 @@
+{
+    "name": "appstract/laravel-pakketpartner",
+    "description": "Wrapper for the Pakketpartner PHP Client",
+    "keywords": [
+        "appstract",
+        "laravel-pakketpartner"
+    ],
+    "homepage": "https://github.com/appstract/laravel-pakketpartner",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gijs Jorissen",
+            "email": "gijs@appstract.nl",
+            "homepage": "https://appstract.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "appstract/pakketpartner-php-client": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Appstract\\LaravelPakketpartner\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Appstract\\LaravelPakketpartner\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Appstract\\LaravelPakketpartner\\PakketpartnerServiceProvider"
+            ],
+            "aliases": {
+                "Pakketpartner": "Appstract\\LaravelPakketpartner\\PakketpartnerFacade"
+            }
+        }
+    }
+}
